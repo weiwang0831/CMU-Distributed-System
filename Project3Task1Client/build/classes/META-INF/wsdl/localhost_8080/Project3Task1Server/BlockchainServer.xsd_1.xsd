@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://edu.cmu.ww5/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://edu.cmu.ww5/">
+
+<xs:element name="NoSuchAlgorithmException" type="tns:NoSuchAlgorithmException"/>
+
+<xs:element name="addBlock" type="tns:addBlock"/>
+
+<xs:element name="addBlockResponse" type="tns:addBlockResponse"/>
+
+<xs:element name="verify" type="tns:verify"/>
+
+<xs:element name="verifyResponse" type="tns:verifyResponse"/>
+
+<xs:element name="view" type="tns:view"/>
+
+<xs:element name="viewResponse" type="tns:viewResponse"/>
+
+<xs:complexType name="view">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="viewResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addBlock">
+<xs:sequence>
+<xs:element name="data" type="xs:string" minOccurs="0"/>
+<xs:element name="difficulty" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addBlockResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:block" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="block">
+<xs:sequence>
+<xs:element name="data" type="xs:string" minOccurs="0"/>
+<xs:element name="difficulty" type="xs:int"/>
+<xs:element name="index" type="xs:int"/>
+<xs:element name="nonce" type="xs:integer" minOccurs="0"/>
+<xs:element name="previousHash" type="xs:string" minOccurs="0"/>
+<xs:element name="timestamp" type="tns:timestamp" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="timestamp">
+<xs:sequence>
+<xs:element name="nanos" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="NoSuchAlgorithmException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="verify">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="verifyResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
